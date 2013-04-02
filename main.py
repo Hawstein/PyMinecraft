@@ -318,6 +318,11 @@ class Window(pyglet.window.Window):
         # 四个点，绘制成两条直线
         self.reticle = None 
         self.dy = 0
+        self.inventory = [BRICK, GRASS, SAND] # 可以建造的类型
+        self.block = self.inventory[0] # 初始时右键建造的是砖块
+        self.num_keys = [ # 数字键响应，用于建造类型的切换
+            key._1, key._2, key._3, key._4, key._5,
+            key._6, key._7, key._8, key._9, key._0]
         self.model = Model()
         # 游戏窗口左上角的label参数设置
         self.label = pyglet.text.Label('', font_name='Arial', font_size=18, 
@@ -434,9 +439,9 @@ class Window(pyglet.window.Window):
                     texture = self.model.world[block]
                     if texture != STONE: # 如果block不是石块，就移除它
                         self.model.remove_block(block)
-            else: # 如果按下右键，且有previous位置，则在previous处增加砖块
+            else: # 如果按下右键，且有previous位置，则在previous处增加方块
                 if previous:
-                    self.model.add_block(previous, BRICK)
+                    self.model.add_block(previous, self.block)
         else: # 否则隐藏鼠标，并绑定鼠标事件到该窗口
             self.set_exclusive_mouse(True)
     # 鼠标移动事件，处理视角的变化
@@ -467,6 +472,9 @@ class Window(pyglet.window.Window):
             self.set_exclusive_mouse(False)
         elif symbol == key.TAB: # 切换是否能飞，即是否可以在垂直方向y上运动
             self.flying = not self.flying
+        elif symbol in self.num_keys: 
+            index = (symbol - self.num_keys[0]) % len(self.inventory) # 0,1,2
+            self.block = self.inventory[index] # 取得相应的方块类型
     # 释放按键事件
     def on_key_release(self, symbol, modifiers):
         if symbol == key.W: # 按键释放时，各方向退回一个单位
