@@ -1,13 +1,7 @@
 # Minecraft
-
-这是用Python和Pyglet写的简单的Minecraft游戏，
-从<https://github.com/fogleman/Minecraft>fork过来的，
-一共只有几百行代码，麻雀虽小，五脏俱全，觉得挺有意思的，
-于是把源码读了一遍，并做了详细的注释。
-通过这个例子学习Pyglet和Python游戏编程还是不错的，推荐。
-
-以下是游戏视频：
-
+Written Minecraft game found at https://github.com/fogleman/Minecraftfork
+This is a simple Python and Pyglet written Minecraft game. I found this code very interesting, so I took certain parts of it and made edits. 
+This video is very good if you want to learn how to program in Pyglet and Python:
 http://www.youtube.com/watch?v=kC3lwK631X8
 
 ## How to Run
@@ -17,36 +11,34 @@ http://www.youtube.com/watch?v=kC3lwK631X8
     cd PyMinecraft
     python main.py
 
-在windows和mac下，pyglet还不支持64 python，对于64 mac，可以试一下：
-
+In Windows and Mac, Pyglet does not support 64 python, so for 64-bit Mac, you can try:
 	export VERSIONER_PYTHON_PREFER_32_BIT=yes
     arch -i386 python main.py
 	
-或者使用支持64位的Pyglet 1.2：
-
+You can also use Pyglet with 64-bit support 1.2:
 	pip install https://pyglet.googlecode.com/files/pyglet-1.2alpha1.tar.gz 
 	
 ## How to Play
 
-### 移动
+### Moving
 
-- W: 向前移动
-- S: 向后移动
-- A: 向左移动
-- D: 向右移动
-- Mouse: 改变视角
-- Space: 跳
-- Tab: 切換飞行模式(飞行模式是可以直接在垂直方向上运动的)
+- W: Move forward
+- S: Move backward
+- A: Move left 
+- D: Move right
+- Mouse: Change perspective 
+- Space: Jump
+- Tab: Switching flight mode (flight mode is directly in the vertical direction of movement)
 
-### 建造
+### Building
 
-- 选择要建造的方块类型
-    - 1: 砖块
-    - 2: 草地
-    - 3: 沙块
-- 单击鼠标左键：移除方块
-- 单击鼠标右键：添加方块
+- Select the type of tile you want to build with 
+    - 1: Bricks
+    - 2: Grass
+    - 3: Sand
+- Click the left mouse button: Remove the box
+- Click the right mouse button: Add a square
 
-### 退出
+### Exit
 
-- ESC: 释放鼠标，关闭窗口
+- ESC: Release the mouse and close the window
