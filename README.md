@@ -1,52 +1,60 @@
-# Minecraft
+# PyMinecraft by Hawstein
 
-这是用Python和Pyglet写的简单的Minecraft游戏，
-从<https://github.com/fogleman/Minecraft>fork过来的，
-一共只有几百行代码，麻雀虽小，五脏俱全，觉得挺有意思的，
-于是把源码读了一遍，并做了详细的注释。
-通过这个例子学习Pyglet和Python游戏编程还是不错的，推荐。
+This is a simple Python and Pyglet written Minecraft game. The orignal code that I used as a basis from my program is from Fogelman https://github.com/fogleman/Minecraftfork. I found the aforementied link served as a very good foundation, so I took certain parts of it and made edits. 
 
-以下是游戏视频：
+## What to Expect
+If you want to understand what Python/Pyglet Minecraft is, this youtube video will give you an idea as to what it is: 
 
 http://www.youtube.com/watch?v=kC3lwK631X8
 
-## How to Run
+## How to Run 
+First you must install pyglet using pip, this should be done in your terminal on your machine (ran by an adminstrator).  
+  `  pip install pyglet`  
+Next clone the respository.  
+  `  git clone https://github.com/Hawstein/PyMinecraft.git`  
+Change directories to PyMinecraft  
+  `  cd PyMinecraft`  
+Open up main.py using python  
+  `  python main.py`
+  
+##### Additional Details
 
-    pip install pyglet
-    git clone https://github.com/Hawstein/PyMinecraft.git
-    cd PyMinecraft
-    python main.py
-
-在windows和mac下，pyglet还不支持64 python，对于64 mac，可以试一下：
+In Windows and Mac, Pyglet does not support 64 python, so for 64-bit Mac, you try:
 
 	export VERSIONER_PYTHON_PREFER_32_BIT=yes
     arch -i386 python main.py
 	
-或者使用支持64位的Pyglet 1.2：
+
+You can also use Pyglet with 64-bit support 1.2:
 
 	pip install https://pyglet.googlecode.com/files/pyglet-1.2alpha1.tar.gz 
 	
-## How to Play
+## Editing main.py
+It is recommended that you use Visual Studio Code to edit your main.py file, PyCharm or any other IDE. Make sure all pull requests to this repository state what is 
+being edited in details.
+	
+## How to Play 
+The game is played through keyboard and mouse. Below are the commands.
+  
+### Moving
 
-### 移动
+- W: Move forward
+- S: Move backward
+- A: Move left 
+- D: Move right
+- Mouse: Change perspective 
+- Space: Jump
+- Tab: Switching flight mode (flight mode is directly in the vertical direction of movement)
+  
+### Building
 
-- W: 向前移动
-- S: 向后移动
-- A: 向左移动
-- D: 向右移动
-- Mouse: 改变视角
-- Space: 跳
-- Tab: 切換飞行模式(飞行模式是可以直接在垂直方向上运动的)
+- Select the type of material you want to build with (Selecting either 1,2, or 3 will change the block you are using to build)
+    - 1: Bricks
+    - 2: Grass
+    - 3: Sand
+- Click the left mouse button: Remove the box
+- Click the right mouse button: Add a square
 
-### 建造
+### Exiting the Game
 
-- 选择要建造的方块类型
-    - 1: 砖块
-    - 2: 草地
-    - 3: 沙块
-- 单击鼠标左键：移除方块
-- 单击鼠标右键：添加方块
-
-### 退出
-
-- ESC: 释放鼠标，关闭窗口
+- ESC: Will close the game, and free your mouse
